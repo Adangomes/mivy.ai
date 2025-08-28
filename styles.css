@@ -1,0 +1,267 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #333;
+}
+
+header {
+    background: #d32f2f;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.container {
+    padding: 1rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.combo {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: background 0.3s ease;
+}
+
+.combo:hover {
+    background: #f9f9f9;
+}
+
+.combo img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.combo-info {
+    flex-grow: 1;
+}
+
+.combo-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.combo-desc {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.combo-price {
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+button {
+    background: #d32f2f;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #b71c1c;
+}
+
+#ver-carrinho-btn {
+    margin-top: 1rem;
+    background-color: #1976d2;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#carrinho-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+#carrinho-modal.active {
+    display: flex;
+}
+
+#carrinho-content {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+#carrinho-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.carrinho-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+
+.carrinho-item span {
+    flex-grow: 1;
+}
+
+.carrinho-item button {
+    background: transparent;
+    color: #d32f2f;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+#fechar-carrinho {
+    margin-top: 1rem;
+    background-color: #d32f2f;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+}
+
+
+/* Modal do combo para escolher adicionais */
+
+#modal-adicionais {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 1rem;
+}
+
+#modal-adicionais.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    max-width: 400px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.adicional-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.adicional-item label {
+    flex-grow: 1;
+}
+
+.adicional-item input[type="number"] {
+    width: 50px;
+}
+
+
+/* Footer modal */
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modal-footer button {
+    padding: 0.5rem 1rem;
+    flex: 1 1 auto;
+    min-width: 120px;
+}
+
+
+/* Responsividade para celular */
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+        max-width: 100%;
+    }
+    .combo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .combo img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .combo-info {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1.1rem;
+    }
+    #ver-carrinho-btn {
+        font-size: 1.3rem;
+        padding: 1rem;
+    }
+    #carrinho-content {
+        max-width: 100%;
+        height: 80vh;
+        border-radius: 0;
+    }
+    #fechar-carrinho {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    .modal-content {
+        max-width: 100%;
+        border-radius: 0;
+    }
+    .modal-footer {
+        flex-direction: column;
+    }
+}
